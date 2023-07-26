@@ -1,0 +1,314 @@
+/* Reset global para margens, preenchimentos e modelo de caixa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* Melhora a renderização da fonte no Safari */
+  -moz-osx-font-smoothing: grayscale; /* Melhora a renderização da fonte no Firefox no macOS */
+}
+
+/* Define variáveis CSS personalizadas para tamanhos de fonte e cores */
+:root {
+  font-size: 62.5%; /* Define 1rem como equivalente a 10px (10px/16px = 62,5%) */
+  --base-font: "Mulish", sans-serif; /* Define a fonte base como "Mulish", com fallback para fontes sans-serif */
+
+  --font-color-white: #ffffff; /* Cor branca do texto */
+  --font-color-pink: #b52184; /* Cor rosa */
+  --font-color-purple: #312d64; /* Cor roxa */
+  --color-background-purple: linear-gradient(
+    134deg,
+    #343193 0%,
+    #302c63 100%
+  ); /* Gradiente linear de fundo roxo */
+  --color-background-body: #f9f4fb; /* Cor de fundo do corpo do site */
+}
+
+/* Estilização para todo o corpo da página */
+body {
+  font-family: var(
+    --base-font
+  ); /* Define a família da fonte base para o corpo */
+  background-color: var(
+    --color-background-body
+  ); /* Define a cor de fundo do corpo */
+}
+
+/* Estilização para todas as imagens */
+img {
+  width: 100%; /* Define todas as imagens com 100% de largura */
+  display: block; /* Define imagens como elementos de bloco */
+}
+
+/* Estilização para cabeçalho h1 */
+h1 {
+  font-size: clamp(
+    3.2rem,
+    3vw + 1.5rem,
+    6rem
+  ); /* Tamanho da fonte responsivo usando "clamp" */
+  font-weight: 900; /* Peso da fonte em negrito */
+  line-height: 4rem; /* Altura da linha de 4 rem */
+  color: var(--font-color-pink); /* Define a cor rosa para o texto */
+  margin: 1.7rem auto 0.5rem; /* Margens superior 1.7 rem, inferior 0.5 rem e laterais automáticas */
+}
+
+/* Estilização para cabeçalho h2 */
+h2 {
+  font-size: 3.2rem; /* Tamanho da fonte de 3.2 rem */
+  line-height: 4rem; /* Altura da linha de 4 rem */
+  font-weight: 900; /* Peso da fonte em negrito */
+  color: var(--font-color-pink); /* Define a cor rosa para o texto */
+  margin-bottom: 4.3rem; /* Margem inferior de 4.3 rem */
+}
+
+/* Estilização para cabeçalho h3 */
+h3 {
+  font-size: 3rem; /* Tamanho da fonte de 3 rem */
+  line-height: 3.6rem; /* Altura da linha de 3.6 rem */
+  color: var(--font-color-pink); /* Define a cor rosa para o texto */
+  font-weight: 900; /* Peso da fonte em negrito */
+  margin-top: 3.3rem; /* Margem superior de 3.3 rem */
+  margin-bottom: 1.9rem; /* Margem inferior de 1.9 rem */
+}
+
+/* Estilização para parágrafos */
+p {
+  font-size: 1.6rem; /* Tamanho da fonte de 1.6 rem */
+  line-height: 2rem; /* Altura da linha de 2 rem */
+  font-weight: 600; /* Peso da fonte semibold */
+  color: var(--font-color-purple); /* Define a cor roxa para o texto */
+}
+
+/* Estilização para elementos de formulário (botão, input, fieldset e textarea) */
+button,
+input,
+fieldset,
+textarea {
+  border: none; /* Remove as bordas */
+  background: none; /* Remove o fundo */
+  font-family: var(
+    --base-font
+  ); /* Define a família da fonte base para os elementos de formulário */
+}
+
+/* Estilização para a seção do cabeçalho hero */
+#hero {
+  padding: 0 3.4rem 9.3rem 3.2rem; /* Preenchimento superior 0, lateral direita/esquerda 3.4 rem, inferior 9.3 rem */
+  text-align: center; /* Centraliza o conteúdo do cabeçalho */
+}
+
+#hero .hero-text p {
+  font-size: 2rem; /* Tamanho da fonte de 2 rem */
+  line-height: 2.5rem; /* Altura da linha de 2.5 rem */
+  margin-bottom: 3.5rem; /* Margem inferior de 3.5 rem */
+}
+
+#hero .hero-text .button-down {
+  width: 5.8rem; /* Largura de 5.8 rem */
+  height: 10.5rem; /* Altura de 10.5 rem */
+  display: flex; /* Exibe como flexbox */
+  border: 4px solid var(--font-color-pink); /* Borda sólida com a cor rosa */
+  border-radius: 76rem; /* Raio da borda de 76 rem para criar um círculo */
+  align-items: center; /* Alinha verticalmente ao centro */
+  justify-content: center; /* Alinha horizontalmente ao centro */
+  margin: 0 auto; /* Margem superior/inferior 0 e laterais automáticas */
+  transition: filter 300ms; /* Adiciona uma transição suave de filtro por 300 milissegundos */
+}
+
+#hero .hero-text .button-down:hover {
+  filter: brightness(0.7); /* Aplica um efeito de brilho reduzido no hover */
+}
+
+#hero .hero-text .button-down img {
+  width: 3rem; /* Largura de 3 rem para a imagem dentro do botão */
+}
+
+/* Estilização para a seção de cartões */
+#cards {
+  background: var(
+    --color-background-purple
+  ); /* Define o fundo com o gradiente roxo */
+  padding: 5.3rem 3.9rem 5.5rem; /* Preenchimento superior 5.3 rem, laterais direita/esquerda 3.9 rem, inferior 5.5 rem */
+  display: grid; /* Usa grid CSS para layout */
+  gap: 4.9rem; /* Espaço entre os elementos do grid de 4.9 rem */
+}
+
+#cards .card {
+  background: var(
+    --color-background-body
+  ); /* Define o fundo dos cartões com a cor de fundo do corpo */
+  padding: 2.6rem; /* Preenchimento interno de 2.6 rem */
+  border-radius: 2rem; /* Cantos arredondados com raio de 2 rem */
+}
+
+#cards .card img {
+  width: 8rem; /* Largura das imagens dos cartões de 8 rem */
+}
+
+/* Estilização para a seção de contato */
+#contact {
+  padding: 7.8rem 3.9rem 6.5rem; /* Preenchimento superior 7.8 rem, laterais direita/esquerda 3.9 rem, inferior 6.5 rem */
+}
+
+#contact form .input-wrapper {
+  margin-bottom: 2.4rem; /* Margem inferior de 2.4 rem para o wrapper de inputs */
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%; /* Largura total para os inputs e textarea */
+  border: 0.15rem solid var(--font-color-purple); /* Borda sólida com a cor roxa */
+  border-radius: 1.6rem; /* Cantos arredondados com raio de 1.6 rem */
+  padding: 1.2rem 1.6rem 1.4rem; /* Preenchimento interno */
+  color: var(
+    --font-color-purple
+  ); /* Define a cor roxa para o texto dos inputs e textarea */
+  font-size: 1.6rem; /* Tamanho da fonte de 1.6 rem */
+  line-height: 1.6rem; /* Altura da linha de 1.6 rem */
+  font-weight: 600; /* Peso da fonte semibold */
+}
+
+#contact form input {
+  padding-left: 4rem; /* Preenchimento à esquerda de 4 rem */
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: var(
+    --text-base-color
+  ); /* Define a cor de placeholder com a cor base do texto */
+}
+
+#contact form textarea {
+  height: 12.6rem; /* Altura de 12.6 rem para o textarea */
+  resize: none; /* Impede o redimensionamento do textarea */
+}
+
+#contact form button {
+  background: var(
+    --color-background-purple
+  ); /* Define a cor de fundo do botão com o gradiente roxo */
+  padding: 1.6rem; /* Preenchimento interno de 1.6 rem */
+  border-radius: 1.6rem; /* Cantos arredondados com raio de 1.6 rem */
+  font-size: 1.4rem; /* Tamanho da fonte de 1.4 rem */
+  line-height: 2.4rem; /* Altura da linha de 2.4 rem */
+  font-weight: 700; /* Peso da fonte em negrito */
+  color: var(
+    --font-color-white
+  ); /* Define a cor branca para o texto do botão */
+  transition: filter 300ms; /* Adiciona uma transição suave de filtro por 300 milissegundos */
+}
+
+#contact form button:hover {
+  filter: brightness(1.3); /* Aplica um efeito de brilho aumentado no hover */
+}
+
+#name {
+  background: url(./assets/images/person.svg); /* Define uma imagem de fundo com o ícone de pessoa */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  background-position: 1.4rem; /* Posiciona a imagem 1.4 rem a partir da borda esquerda */
+}
+
+#email {
+  background: url(./assets/images/at.svg); /* Define uma imagem de fundo com o ícone de arroba */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  background-position: 1.4rem; /* Posiciona a imagem 1.4 rem a partir da borda esquerda */
+}
+
+/* Estilização para a seção do rodapé */
+footer {
+  background: var(
+    --color-background-purple
+  ); /* Define o fundo do rodapé com o gradiente roxo */
+  padding: 3.2rem 1.6rem; /* Preenchimento superior/inferior 3.2 rem, laterais direita/esquerda 1.6 rem */
+}
+
+footer p {
+  font-size: 1.5rem; /* Tamanho da fonte de 1.5 rem */
+  line-height: 2.4rem; /* Altura da linha de 2.4 rem */
+  font-weight: 600; /* Peso da fonte semibold */
+  color: var(
+    --font-color-white
+  ); /* Define a cor branca para o texto do rodapé */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Media Query para telas com largura mínima de 1440px (Desktop) */
+@media (min-width: 1440px) {
+  h3 {
+    font-size: 3.5rem; /* Tamanho da fonte de 3.5 rem para h3 */
+    margin-top: 4rem; /* Margem superior de 4 rem para h3 */
+    margin-bottom: 2.4rem; /* Margem inferior de 2.4 rem para h3 */
+  }
+
+  p {
+    font-size: 2rem; /* Tamanho da fonte de 2 rem para p */
+    line-height: 2.4rem; /* Altura da linha de 2.4 rem para p */
+  }
+
+  /* Ajustes para a seção do cabeçalho hero em telas maiores (Desktop) */
+  #hero {
+    display: flex; /* Exibe os elementos do cabeçalho como flexbox */
+    justify-content: space-between; /* Alinha os elementos horizontalmente com espaço entre eles */
+    padding: 0 2.9rem 10.3rem 10.9rem; /* Preenchimento superior 0, lateral direita 2.9 rem, inferior 10.3 rem, lateral esquerda 10.9 rem */
+    max-height: 83.6rem; /* Altura máxima de 83.6 rem para o cabeçalho hero */
+  }
+
+  #hero .hero-text {
+    display: flex; /* Exibe o conteúdo do cabeçalho hero como flexbox */
+    flex-direction: column; /* Alinha os elementos em coluna */
+    align-items: start; /* Alinha os elementos à esquerda */
+    order: 1; /* Altera a ordem do conteúdo para que o texto venha antes da imagem */
+    margin-top: 25rem; /* Margem superior de 25 rem para o conteúdo do cabeçalho hero */
+  }
+
+  #hero .hero-text p {
+    font-size: 3.2rem; /* Tamanho da fonte de 3.2 rem para o texto do cabeçalho hero */
+    line-height: 4rem; /* Altura da linha de 4 rem para o texto do cabeçalho hero */
+    margin-bottom: 17.9rem; /* Margem inferior de 17.9 rem para o texto do cabeçalho hero */
+  }
+
+  #hero .hero-text .button-down {
+    margin: 0; /* Remove as margens do botão-down do cabeçalho hero */
+  }
+
+  #hero .astronaut {
+    order: 2; /* Altera a ordem da imagem do astronauta para que venha após o texto */
+  }
+
+  /* Ajustes para a seção dos cartões em telas maiores (Desktop) */
+  #cards {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Define três colunas de tamanho igual para os cartões */
+    gap: 6rem; /* Espaço entre os cartões de 6 rem */
+    padding: 6.4rem 11.1rem 8rem; /* Preenchimento superior 6.4 rem, lateral direita 11.1 rem, inferior 8 rem */
+  }
+
+  #cards .card {
+    padding: 3.2rem 1.3rem 3.2rem 3.2rem; /* Preenchimento superior 3.2 rem, lateral direita 1.3 rem, inferior 3.2 rem, lateral esquerda 3.2 rem */
+    border-radius: 2.4rem; /* Cantos arredondados com raio de 2.4 rem para os cartões */
+  }
+
+  /* Ajustes para a seção de contato em telas maiores (Desktop) */
+  #contact {
+    display: flex; /* Exibe o conteúdo do contato como flexbox */
+    align-items: center; /* Alinha os elementos verticalmente ao centro */
+    justify-content: space-between; /* Alinha os elementos horizontalmente com espaço entre eles */
+    gap: 9rem; /* Espaço entre os elementos de 9 rem */
+    height: 62rem; /* Altura de 62 rem para a seção de contato */
+    background: url(./assets/images/layer-stars.png); /* Define a imagem de fundo com estrelas */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-position: right; /* Posiciona a imagem à direita */
+    padding-left: 11rem; /* Preenchimento à esquerda de 11 rem */
+  }
+
+  #contact form {
+    flex: 1; /* Define o formulário como elemento flexível para ocupar o espaço disponível */
+  }
+
+  #contact .stars {
+    flex: 1; /* Define as estrelas como elemento flexível para ocupar o espaço disponível */
+  }
+}
